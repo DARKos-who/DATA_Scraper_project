@@ -1,8 +1,8 @@
-# DATA Scraper Project
+DATA Scraper Project
 
 ## Installation
 
-Cloner le dépôt, puis créer un environnement Python dans le dossier du projet :
+Clone the repository, then create a Python environment in the project folder:
 
     git clone https://github.com/DARKos-who/DATA_Scraper_project.git
     cd DATA_Scraper_project
@@ -10,26 +10,26 @@ Cloner le dépôt, puis créer un environnement Python dans le dossier du projet
     source .venv/bin/activate
     pip install -r requirements.txt
 
-Avant chaque nouvelle session de travail dans ce dossier :
+Before every new work session in this folder:
 
     git pull
 
-## Nettoyage des données
+## Data Cleaning
 
-Ouvrir `data_cleaning.ipynb` dans VS Code, sélectionner le noyau Python de `.venv`, puis exécuter les cellules dans l'ordre.
+Open `data_cleaning.ipynb` in VS Code, select the Python kernel from `.venv`, then run the cells in order.
 
-- `RAW_scraped_data.csv` : données brutes produites par le scraper.
-- `cleaned_data.csv` : 362 lignes conservées, avec les URL séparées du texte des liens.
-- `content_frequencies.csv` : 238 éléments distincts avec leur nombre d'occurrences.
+- `RAW_scraped_data.csv`
+- `cleaned_data.csv`
+- `content_frequencies.csv`
 
-Les lignes répétées restent dans `cleaned_data.csv` : elles peuvent représenter plusieurs apparitions du même texte sur la page. Certains textes collés proviennent de l'extraction HTML et ne sont pas corrigés automatiquement.
+Repeated lines remain in `cleaned_data.csv`: they may represent multiple appearances of the same text on the page. Some merged/pasted texts come from the HTML extraction and are not corrected automatically.
 
-Le scraper collecte les titres, paragraphes et liens d'une page. Il ne crée pas de fiches produit structurées avec prix et catégorie.
+The scraper collects headings, paragraphs, and links from a page. It does not create structured product sheets with prices and categories.
 
-**Attention :** relancer `Scraper.py` depuis le dossier du projet remplace `RAW_scraped_data.csv`.
+**Warning:** re-running `Scraper.py` from the project folder replaces `RAW_scraped_data.csv`.
 
-## Visualisation des données
+## Data Visualization
 
-Ouvrir `visualisation_des_donnees.ipynb` dans VS Code, sélectionner le noyau Python de `.venv`, puis exécuter les cellules dans l’ordre. Le notebook charge `cleaned_data.csv` et présente six graphiques réalisés avec Matplotlib et Seaborn : types d’éléments, longueur des textes, comparaison par type, textes répétés, mots des titres H3 et domaines des liens. Chaque graphique est accompagné d’une interprétation.
+Open `visualisation_des_donnees.ipynb` in VS Code, select the Python kernel from `.venv`, and run the cells in order. The notebook loads `cleaned_data.csv` and presents six charts created with Matplotlib and Seaborn: element types, text length, comparison by type, repeated texts, words in H3 titles, and link domains. Each chart is accompanied by an interpretation.
 
-Les données décrivent le contenu textuel d’une page à un moment donné. Elles ne contiennent ni ventes, ni prix structurés, ni catégories de produits fiables.
+The data describes the textual content of a page at a given moment. It contains no sales, structured prices, or reliable product categories.
